@@ -30,7 +30,6 @@ class TicTacToeAI:
         main_container.pack(fill='both', expand=True, padx=30, pady=20)
 
         title_frame, self.title_label = self.ui_components.create_animated_title(main_container)
-
         header_card, self.stats_label = self.ui_components.create_header_card(
             main_container,
             self.game_logic.get_formatted_stats(),
@@ -193,4 +192,5 @@ class TicTacToeAI:
 
 if __name__ == "__main__":
     game = TicTacToeAI()
+
     game.run()
