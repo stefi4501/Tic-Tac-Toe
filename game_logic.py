@@ -62,7 +62,6 @@ class GameLogic:
         return best_move
 
     def _minimax(self, depth, is_maximizing, alpha, beta):
-        """Minimax algorithm with alpha-beta pruning"""
         winner = self.evaluate_board()
 
         if winner == self.ai:
@@ -98,7 +97,6 @@ class GameLogic:
             return min_score
 
     def evaluate_board(self):
-        """Check if there's a winner on the current board"""
         winning_combos = [
             [0, 1, 2], [3, 4, 5], [6, 7, 8],  # rows
             [0, 3, 6], [1, 4, 7], [2, 5, 8],  # columns
