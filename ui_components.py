@@ -46,12 +46,15 @@ class UIComponents:
     def create_header_card(self, parent, stats_text, difficulty_var, difficulty_callback):
         header_card = tk.Frame(parent, bg=self.colors['bg_secondary'], relief='flat')
         header_card.pack(fill='x', pady=(0, 25))
+
+        # Add subtle border effect
         border_frame = tk.Frame(header_card, height=2, bg=self.colors['accent_blue'])
         border_frame.pack(fill='x')
 
         card_content = tk.Frame(header_card, bg=self.colors['bg_secondary'])
         card_content.pack(fill='x', padx=25, pady=20)
 
+        # Statistics section
         stats_section = tk.Frame(card_content, bg=self.colors['bg_secondary'])
         stats_section.pack(side='left', fill='x', expand=True)
 
@@ -111,9 +114,12 @@ class UIComponents:
     def create_game_board(self, parent, button_callback):
         board_container = tk.Frame(parent, bg=self.colors['bg_primary'])
         board_container.pack(pady=20)
+
+        # shadow frame
         shadow_frame = tk.Frame(board_container, bg='#000000', height=4)
         shadow_frame.pack(fill='x')
 
+        # main board frame
         board_frame = tk.Frame(
             board_container,
             bg=self.colors['bg_secondary'],
@@ -184,7 +190,6 @@ class UIComponents:
         button_frame = tk.Frame(parent, bg=self.colors['bg_primary'])
         button_frame.pack(pady=30)
 
-        # New Game button
         new_game_btn = tk.Button(
             button_frame,
             text="NEW GAME",
@@ -235,6 +240,7 @@ class UIComponents:
             cursor='hand2'
         )
         quit_btn.pack(side='left', padx=10)
+
         return button_frame
 
     def on_button_hover(self, button, entering):
@@ -291,5 +297,4 @@ class UIComponents:
         status_label.config(
             text=message,
             fg=color_map.get(status_type, self.colors['text_primary'])
-
         )
