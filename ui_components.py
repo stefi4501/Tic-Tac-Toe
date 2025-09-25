@@ -47,14 +47,12 @@ class UIComponents:
         header_card = tk.Frame(parent, bg=self.colors['bg_secondary'], relief='flat')
         header_card.pack(fill='x', pady=(0, 25))
 
-        # Add subtle border effect
         border_frame = tk.Frame(header_card, height=2, bg=self.colors['accent_blue'])
         border_frame.pack(fill='x')
 
         card_content = tk.Frame(header_card, bg=self.colors['bg_secondary'])
         card_content.pack(fill='x', padx=25, pady=20)
 
-        # Statistics section
         stats_section = tk.Frame(card_content, bg=self.colors['bg_secondary'])
         stats_section.pack(side='left', fill='x', expand=True)
 
